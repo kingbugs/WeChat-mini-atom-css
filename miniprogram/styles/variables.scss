@@ -1,0 +1,229 @@
+/**
+ * CSS 变量系统
+ * 提供主题色彩、背景、文字、边框等 CSS 变量
+ * 微信小程序基础库 2.9.0+ 支持
+ */
+
+/* ============================================
+   基础重置
+   ============================================ */
+page,
+view,
+image,
+button,
+text,
+navigator,
+swiper,
+swiper-item,
+scroll-view {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================
+   主题变量定义 (Light 模式)
+   ============================================ */
+page {
+  /* 主色调 - 蓝色系 */
+  --color-primary: #2563eb;
+  --color-primary-light: #3b82f6;
+  --color-primary-dark: #1d4ed8;
+  --color-primary-gradient: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  --color-primary-bg: #eff6ff;
+  --color-primary-text: #1e40af;
+
+  /* 成功色 - 绿色系 */
+  --color-success: #059669;
+  --color-success-light: #10b981;
+  --color-success-dark: #047857;
+  --color-success-gradient: linear-gradient(135deg, #10b981 0%, #047857 100%);
+  --color-success-bg: #d1fae5;
+  --color-success-text: #065f46;
+
+  /* 警告色 - 橙色系 */
+  --color-warning: #ea580c;
+  --color-warning-light: #f97316;
+  --color-warning-dark: #c2410c;
+  --color-warning-gradient: linear-gradient(135deg, #f97316 0%, #c2410c 100%);
+  --color-warning-bg: #fff7ed;
+  --color-warning-text: #9a3412;
+
+  /* 紫色系 */
+  --color-purple: #7c3aed;
+  --color-purple-light: #8b5cf6;
+  --color-purple-dark: #6d28d9;
+  --color-purple-gradient: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  --color-purple-bg: #ede9fe;
+  --color-purple-text: #5b21b6;
+
+  /* 危险色 - 红色系 */
+  --color-danger: #dc2626;
+  --color-danger-light: #ef4444;
+  --color-danger-dark: #b91c1c;
+  --color-danger-gradient: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+  --color-danger-bg: #fef2f2;
+  --color-danger-text: #991b1b;
+
+  /* 背景色 */
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f8fafc;
+  --color-bg-muted: #f1f5f9;
+  --color-bg-primary: #ffffff;
+
+  /* 文字颜色 */
+  --color-text: #0f172a;
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748b;
+  --color-text-light: #94a3b8;
+
+  /* 边框颜色 */
+  --color-border: #e2e8f0;
+  --color-border-light: #f1f5f9;
+
+  /* 阴影 */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-primary: rgba(37, 99, 235, 0.25);
+  --shadow-success: rgba(5, 150, 105, 0.25);
+  --shadow-purple: rgba(124, 58, 237, 0.25);
+  --shadow-warning: rgba(234, 88, 12, 0.25);
+  --shadow-danger: rgba(220, 38, 38, 0.25);
+
+  /* 图标背景色 */
+  --color-icon-1: #eff6ff;
+  --color-icon-2: #f0fdf4;
+  --color-icon-3: #fefce8;
+  --color-icon-4: #fdf2f8;
+
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* ============================================
+   深色模式变量 (Dark Mode)
+   ============================================ */
+.page-dark,
+page.theme-dark {
+  /* 主色调 - 浅蓝色系 */
+  --color-primary: #818cf8;
+  --color-primary-light: #a5b4fc;
+  --color-primary-dark: #6366f1;
+  --color-primary-gradient: linear-gradient(135deg, #a5b4fc 0%, #6366f1 100%);
+  --color-primary-bg: #1e1b4b;
+  --color-primary-text: #c7d2fe;
+
+  /* 成功色 - 亮绿色系 */
+  --color-success: #34d399;
+  --color-success-light: #6ee7b7;
+  --color-success-dark: #10b981;
+  --color-success-gradient: linear-gradient(135deg, #6ee7b7 0%, #10b981 100%);
+  --color-success-bg: #064e3b;
+  --color-success-text: #6ee7b7;
+
+  /* 警告色 - 亮橙色系 */
+  --color-warning: #fb923c;
+  --color-warning-light: #fdba74;
+  --color-warning-dark: #f97316;
+  --color-warning-gradient: linear-gradient(135deg, #fdba74 0%, #f97316 100%);
+  --color-warning-bg: #431407;
+  --color-warning-text: #fdba74;
+
+  /* 紫色系 */
+  --color-purple: #a78bfa;
+  --color-purple-light: #c4b5fd;
+  --color-purple-dark: #8b5cf6;
+  --color-purple-gradient: linear-gradient(135deg, #c4b5fd 0%, #8b5cf6 100%);
+  --color-purple-bg: #2e1065;
+  --color-purple-text: #c4b5fd;
+
+  /* 危险色 */
+  --color-danger: #f87171;
+  --color-danger-light: #fca5a5;
+  --color-danger-dark: #ef4444;
+  --color-danger-gradient: linear-gradient(135deg, #fca5a5 0%, #ef4444 100%);
+  --color-danger-bg: #450a0a;
+  --color-danger-text: #fecaca;
+
+  /* 背景色 - 深色 */
+  --color-bg: #0f172a;
+  --color-bg-secondary: #1e293b;
+  --color-bg-muted: #334155;
+  --color-bg-primary: #0f172a;
+
+  /* 文字颜色 */
+  --color-text: #f1f5f9;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+  --color-text-light: #64748b;
+
+  /* 边框颜色 */
+  --color-border: #1e293b;
+  --color-border-light: #334155;
+
+  /* 阴影 - 深色模式下更深 */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+  --shadow-primary: rgba(129, 140, 248, 0.3);
+  --shadow-success: rgba(52, 211, 153, 0.3);
+  --shadow-purple: rgba(167, 139, 250, 0.3);
+  --shadow-warning: rgba(251, 146, 60, 0.3);
+  --shadow-danger: rgba(248, 113, 113, 0.3);
+
+  /* 图标背景色 */
+  --color-icon-1: #1e1b4b;
+  --color-icon-2: #1e293b;
+  --color-icon-3: #064e3b;
+  --color-icon-4: #4a1942;
+
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* ============================================
+   CSS 变量别名 (向后兼容)
+   ============================================ */
+page {
+  /* 兼容旧的变量名 */
+  --theme-primary: var(--color-primary);
+  --theme-primary-light: var(--color-primary-light);
+  --theme-primary-gradient: var(--color-primary-gradient);
+  --theme-success: var(--color-success);
+  --theme-success-light: var(--color-success-light);
+  --theme-success-gradient: var(--color-success-gradient);
+  --theme-success-bg: var(--color-success-bg);
+  --theme-success-text: var(--color-success-text);
+  --theme-warning: var(--color-warning);
+  --theme-warning-light: var(--color-warning-light);
+  --theme-warning-gradient: var(--color-warning-gradient);
+  --theme-warning-bg: var(--color-warning-bg);
+  --theme-warning-text: var(--color-warning-text);
+  --theme-purple: var(--color-purple);
+  --theme-purple-light: var(--color-purple-light);
+  --theme-purple-gradient: var(--color-purple-gradient);
+  --theme-purple-bg: var(--color-purple-bg);
+  --theme-purple-text: var(--color-purple-text);
+  --theme-danger: var(--color-danger);
+  --theme-background: var(--color-bg);
+  --theme-background-secondary: var(--color-bg-secondary);
+  --theme-background-muted: var(--color-bg-muted);
+  --theme-text: var(--color-text);
+  --theme-text-secondary: var(--color-text-secondary);
+  --theme-text-muted: var(--color-text-muted);
+  --theme-text-light: var(--color-text-light);
+  --theme-border: var(--color-border);
+  --theme-border-light: var(--color-border-light);
+  --theme-shadow: rgba(15, 23, 42, 0.06);
+  --theme-shadow-primary: var(--shadow-primary);
+  --theme-shadow-success: var(--shadow-success);
+  --theme-shadow-purple: var(--shadow-purple);
+  --theme-shadow-orange: var(--shadow-warning);
+  --theme-bg-icon-1: var(--color-icon-1);
+  --theme-bg-icon-2: var(--color-icon-2);
+  --theme-bg-icon-3: var(--color-icon-3);
+  --theme-bg-icon-4: var(--color-icon-4);
+}

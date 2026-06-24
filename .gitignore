@@ -1,0 +1,52 @@
+# 微信小程序编译产物
+*.js
+!miniprogram_npm/
+
+# 依赖目录
+node_modules/
+miniprogram_npm/
+
+# IDE 配置
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# macOS 系统文件
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows 系统文件
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 日志文件
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 环境配置
+.env
+.env.local
+.env.*.local
+
+# 临时文件
+*.tmp
+*.temp
+.cache/
+
+# TypeScript 编译缓存
+*.tsbuildinfo
+
+# 测试覆盖率
+coverage/
+.nyc_output/
+
+# 打包文件
+*.zip
+*.rar
+*.7z

@@ -1,0 +1,668 @@
+/**
+ * Holiday theme color system
+ * Using SCSS Map and loops to generate holiday styles
+ */
+
+/* ============================================
+   Holiday configuration Map - Complete semantic color system
+   ============================================ */
+$holiday-themes: (
+  'new-year': (
+    name: '元旦',
+    primary: #8b5cf6,
+    primary-light: #a78bfa,
+    primary-dark: #7c3aed,
+    success: #10b981,
+    success-light: #34d399,
+    success-dark: #059669,
+    warning: #f59e0b,
+    warning-light: #fbbf24,
+    warning-dark: #d97706,
+    danger: #ef4444,
+    danger-light: #f87171,
+    danger-dark: #dc2626,
+    purple: #a855f7,
+    purple-light: #c084fc,
+    purple-dark: #9333ea,
+    bg: #f5f3ff,
+    text: #5b21b6,
+    card-bg: #ede9fe,
+    bg-muted: #f3f4f6
+  ),
+  'spring': (
+    name: '春节',
+    primary: #dc2626,
+    primary-light: #f87171,
+    primary-dark: #b91c1c,
+    success: #16a34a,
+    success-light: #4ade80,
+    success-dark: #15803d,
+    warning: #f59e0b,
+    warning-light: #fcd34d,
+    warning-dark: #d97706,
+    danger: #ef4444,
+    danger-light: #fca5a5,
+    danger-dark: #dc2626,
+    purple: #9333ea,
+    purple-light: #a855f7,
+    purple-dark: #7c3aed,
+    bg: #fef2f2,
+    text: #991b1b,
+    card-bg: #fecaca,
+    bg-muted: #fef08a
+  ),
+  'lantern': (
+    name: '元宵节',
+    primary: #ea580c,
+    primary-light: #fb923c,
+    primary-dark: #c2410c,
+    success: #16a34a,
+    success-light: #4ade80,
+    success-dark: #15803d,
+    warning: #f59e0b,
+    warning-light: #fcd34d,
+    warning-dark: #d97706,
+    danger: #ef4444,
+    danger-light: #f87171,
+    danger-dark: #dc2626,
+    purple: #8b5cf6,
+    purple-light: #a78bfa,
+    purple-dark: #7c3aed,
+    bg: #fff7ed,
+    text: #9a3412,
+    card-bg: #ffedd5,
+    bg-muted: #fef3c7
+  ),
+  'tomb-sweeping': (
+    name: '清明节',
+    primary: #16a34a,
+    primary-light: #4ade80,
+    primary-dark: #15803d,
+    success: #059669,
+    success-light: #34d399,
+    success-dark: #047857,
+    warning: #84cc16,
+    warning-light: #a3e635,
+    warning-dark: #65a30d,
+    danger: #6b7280,
+    danger-light: #9ca3af,
+    danger-dark: #4b5563,
+    purple: #6b7280,
+    purple-light: #9ca3af,
+    purple-dark: #4b5563,
+    bg: #f0fdf4,
+    text: #166534,
+    card-bg: #dcfce7,
+    bg-muted: #ecfdf5
+  ),
+  'labor': (
+    name: '劳动节',
+    primary: #2563eb,
+    primary-light: #60a5fa,
+    primary-dark: #1d4ed8,
+    success: #10b981,
+    success-light: #34d399,
+    success-dark: #059669,
+    warning: #f59e0b,
+    warning-light: #fbbf24,
+    warning-dark: #d97706,
+    danger: #ef4444,
+    danger-light: #f87171,
+    danger-dark: #dc2626,
+    purple: #8b5cf6,
+    purple-light: #a78bfa,
+    purple-dark: #7c3aed,
+    bg: #eff6ff,
+    text: #1e40af,
+    card-bg: #dbeafe,
+    bg-muted: #e0f2fe
+  ),
+  'dragon-boat': (
+    name: '端午节',
+    primary: #059669,
+    primary-light: #34d399,
+    primary-dark: #047857,
+    success: #10b981,
+    success-light: #4ade80,
+    success-dark: #059669,
+    warning: #f59e0b,
+    warning-light: #fbbf24,
+    warning-dark: #d97706,
+    danger: #ef4444,
+    danger-light: #f87171,
+    danger-dark: #dc2626,
+    purple: #8b5cf6,
+    purple-light: #a78bfa,
+    purple-dark: #7c3aed,
+    bg: #ecfdf5,
+    text: #065f46,
+    card-bg: #d1fae5,
+    bg-muted: #d1fae5
+  ),
+  'party': (
+    name: '建党节',
+    primary: #dc2626,
+    primary-light: #f87171,
+    primary-dark: #b91c1c,
+    success: #16a34a,
+    success-light: #4ade80,
+    success-dark: #15803d,
+    warning: #f59e0b,
+    warning-light: #fbbf24,
+    warning-dark: #d97706,
+    danger: #ef4444,
+    danger-light: #f87171,
+    danger-dark: #dc2626,
+    purple: #8b5cf6,
+    purple-light: #a78bfa,
+    purple-dark: #7c3aed,
+    bg: #fef2f2,
+    text: #991b1b,
+    card-bg: #fecaca,
+    bg-muted: #fef08a
+  ),
+  'army': (
+    name: '建军节',
+    primary: #2563eb,
+    primary-light: #60a5fa,
+    primary-dark: #1d4ed8,
+    success: #10b981,
+    success-light: #34d399,
+    success-dark: #059669,
+    warning: #f59e0b,
+    warning-light: #fbbf24,
+    warning-dark: #d97706,
+    danger: #ef4444,
+    danger-light: #f87171,
+    danger-dark: #dc2626,
+    purple: #8b5cf6,
+    purple-light: #a78bfa,
+    purple-dark: #7c3aed,
+    bg: #eff6ff,
+    text: #1e40af,
+    card-bg: #dbeafe,
+    bg-muted: #e0f2fe
+  ),
+  'victory': (
+    name: '抗战胜利',
+    primary: #dc2626,
+    primary-light: #f87171,
+    primary-dark: #b91c1c,
+    success: #16a34a,
+    success-light: #4ade80,
+    success-dark: #15803d,
+    warning: #f59e0b,
+    warning-light: #fbbf24,
+    warning-dark: #d97706,
+    danger: #ef4444,
+    danger-light: #f87171,
+    danger-dark: #dc2626,
+    purple: #8b5cf6,
+    purple-light: #a78bfa,
+    purple-dark: #7c3aed,
+    bg: #fef2f2,
+    text: #991b1b,
+    card-bg: #fecaca,
+    bg-muted: #fef08a
+  ),
+  '918': (
+    name: '九一八',
+    primary: #6b7280,
+    primary-light: #9ca3af,
+    primary-dark: #4b5563,
+    success: #6b7280,
+    success-light: #9ca3af,
+    success-dark: #4b5563,
+    warning: #9ca3af,
+    warning-light: #d1d5db,
+    warning-dark: #6b7280,
+    danger: #ef4444,
+    danger-light: #f87171,
+    danger-dark: #dc2626,
+    purple: #6b7280,
+    purple-light: #9ca3af,
+    purple-dark: #4b5563,
+    bg: #f9fafb,
+    text: #374151,
+    card-bg: #e5e7eb,
+    bg-muted: #d1d5db
+  ),
+  'martyrs': (
+    name: '烈士纪念日',
+    primary: #dc2626,
+    primary-light: #f87171,
+    primary-dark: #b91c1c,
+    success: #6b7280,
+    success-light: #9ca3af,
+    success-dark: #4b5563,
+    warning: #9ca3af,
+    warning-light: #d1d5db,
+    warning-dark: #6b7280,
+    danger: #ef4444,
+    danger-light: #f87171,
+    danger-dark: #dc2626,
+    purple: #6b7280,
+    purple-light: #9ca3af,
+    purple-dark: #4b5563,
+    bg: #fef2f2,
+    text: #991b1b,
+    card-bg: #fecaca,
+    bg-muted: #fef08a
+  ),
+  'national': (
+    name: '国庆节',
+    primary: #dc2626,
+    primary-light: #f87171,
+    primary-dark: #b91c1c,
+    success: #16a34a,
+    success-light: #4ade80,
+    success-dark: #15803d,
+    warning: #f59e0b,
+    warning-light: #fbbf24,
+    warning-dark: #d97706,
+    danger: #ef4444,
+    danger-light: #f87171,
+    danger-dark: #dc2626,
+    purple: #8b5cf6,
+    purple-light: #a78bfa,
+    purple-dark: #7c3aed,
+    bg: #fef2f2,
+    text: #991b1b,
+    card-bg: #fecaca,
+    bg-muted: #fef08a
+  ),
+  'mid-autumn': (
+    name: '中秋节',
+    primary: #f59e0b,
+    primary-light: #fbbf24,
+    primary-dark: #d97706,
+    success: #16a34a,
+    success-light: #4ade80,
+    success-dark: #15803d,
+    warning: #f59e0b,
+    warning-light: #fbbf24,
+    warning-dark: #d97706,
+    danger: #ef4444,
+    danger-light: #f87171,
+    danger-dark: #dc2626,
+    purple: #8b5cf6,
+    purple-light: #a78bfa,
+    purple-dark: #7c3aed,
+    bg: #fffbeb,
+    text: #92400e,
+    card-bg: #fef3c7,
+    bg-muted: #fef3c7
+  ),
+  'mourning': (
+    name: '国家公祭日',
+    primary: #374151,
+    primary-light: #4b5563,
+    primary-dark: #1f2937,
+    success: #6b7280,
+    success-light: #9ca3af,
+    success-dark: #4b5563,
+    warning: #9ca3af,
+    warning-light: #d1d5db,
+    warning-dark: #6b7280,
+    danger: #ef4444,
+    danger-light: #f87171,
+    danger-dark: #dc2626,
+    purple: #6b7280,
+    purple-light: #9ca3af,
+    purple-dark: #4b5563,
+    bg: #f9fafb,
+    text: #374151,
+    card-bg: #e5e7eb,
+    bg-muted: #d1d5db
+  )
+);
+
+/* ============================================
+   Generate holiday complete CSS variables
+   ============================================ */
+@each $theme-name, $colors in $holiday-themes {
+  .page-holiday-#{$theme-name} {
+    --color-primary: map-get($colors, primary);
+    --color-primary-light: map-get($colors, primary-light);
+    --color-primary-dark: map-get($colors, primary-dark);
+    --color-primary-gradient: linear-gradient(135deg, map-get($colors, primary-light) 0%, map-get($colors, primary-dark) 100%);
+    --color-primary-bg: map-get($colors, bg);
+    --color-primary-text: map-get($colors, text);
+    
+    --color-success: map-get($colors, success);
+    --color-success-light: map-get($colors, success-light);
+    --color-success-dark: map-get($colors, success-dark);
+    --color-success-gradient: linear-gradient(135deg, map-get($colors, success-light) 0%, map-get($colors, success-dark) 100%);
+    --color-success-bg: map-get($colors, bg);
+    --color-success-text: map-get($colors, success);
+    
+    --color-warning: map-get($colors, warning);
+    --color-warning-light: map-get($colors, warning-light);
+    --color-warning-dark: map-get($colors, warning-dark);
+    --color-warning-gradient: linear-gradient(135deg, map-get($colors, warning-light) 0%, map-get($colors, warning-dark) 100%);
+    --color-warning-bg: map-get($colors, bg);
+    --color-warning-text: map-get($colors, warning);
+    
+    --color-danger: map-get($colors, danger);
+    --color-danger-light: map-get($colors, danger-light);
+    --color-danger-dark: map-get($colors, danger-dark);
+    --color-danger-gradient: linear-gradient(135deg, map-get($colors, danger-light) 0%, map-get($colors, danger-dark) 100%);
+    --color-danger-bg: map-get($colors, bg);
+    --color-danger-text: map-get($colors, danger);
+    
+    --color-purple: map-get($colors, purple);
+    --color-purple-light: map-get($colors, purple-light);
+    --color-purple-dark: map-get($colors, purple-dark);
+    --color-purple-gradient: linear-gradient(135deg, map-get($colors, purple-light) 0%, map-get($colors, purple-dark) 100%);
+    --color-purple-bg: map-get($colors, bg);
+    --color-purple-text: map-get($colors, purple);
+    
+    --color-bg: map-get($colors, bg);
+    --color-text: map-get($colors, text);
+    --color-bg-secondary: map-get($colors, card-bg);
+    --color-bg-muted: map-get($colors, bg-muted);
+    
+    --color-icon-1: map-get($colors, card-bg);
+    --color-icon-2: map-get($colors, bg);
+    --color-icon-3: map-get($colors, card-bg);
+    --color-icon-4: map-get($colors, bg);
+    
+    background-color: map-get($colors, bg);
+  }
+}
+
+/* ============================================
+   Generate holiday utility classes (with !important for priority)
+   ============================================ */
+@each $theme-name, $colors in $holiday-themes {
+  .page-holiday-#{$theme-name} {
+    .text-primary { color: map-get($colors, primary) !important; }
+    .text-success { color: map-get($colors, success) !important; }
+    .text-warning { color: map-get($colors, warning) !important; }
+    .text-danger { color: map-get($colors, danger) !important; }
+    .text-purple { color: map-get($colors, purple) !important; }
+    .text-default { color: map-get($colors, text) !important; }
+    
+    .bg-primary { background-color: map-get($colors, primary) !important; }
+    .bg-success { background-color: map-get($colors, success) !important; }
+    .bg-warning { background-color: map-get($colors, warning) !important; }
+    .bg-danger { background-color: map-get($colors, danger) !important; }
+    .bg-purple { background-color: map-get($colors, purple) !important; }
+    .bg-card { background-color: map-get($colors, card-bg) !important; }
+    .bg-default { background-color: map-get($colors, bg) !important; }
+    .bg-muted { background-color: map-get($colors, bg-muted) !important; }
+    
+    .gradient-primary { background: linear-gradient(135deg, map-get($colors, primary-light) 0%, map-get($colors, primary-dark) 100%) !important; }
+    .gradient-success { background: linear-gradient(135deg, map-get($colors, success-light) 0%, map-get($colors, success-dark) 100%) !important; }
+    .gradient-warning { background: linear-gradient(135deg, map-get($colors, warning-light) 0%, map-get($colors, warning-dark) 100%) !important; }
+    .gradient-danger { background: linear-gradient(135deg, map-get($colors, danger-light) 0%, map-get($colors, danger-dark) 100%) !important; }
+    .gradient-purple { background: linear-gradient(135deg, map-get($colors, purple-light) 0%, map-get($colors, purple-dark) 100%) !important; }
+    
+    .border-primary { border-color: map-get($colors, primary) !important; }
+    .border-success { border-color: map-get($colors, success) !important; }
+    .border-warning { border-color: map-get($colors, warning) !important; }
+    .border-danger { border-color: map-get($colors, danger) !important; }
+    .border-purple { border-color: map-get($colors, purple) !important; }
+    
+    .tag-primary { background-color: #f0fdf4 !important; color: map-get($colors, primary) !important; }
+    .tag-success { background-color: #f0fdf4 !important; color: map-get($colors, success) !important; }
+    .tag-warning { background-color: #fffbeb !important; color: map-get($colors, warning) !important; }
+    .tag-danger { background-color: #fef2f2 !important; color: map-get($colors, danger) !important; }
+    .tag-purple { background-color: #f5f3ff !important; color: map-get($colors, purple) !important; }
+    
+    .btn-primary { background-color: map-get($colors, primary) !important; }
+    .btn-primary:active { background-color: map-get($colors, primary-dark) !important; }
+    .btn-success { background-color: map-get($colors, success) !important; }
+    .btn-success:active { background-color: map-get($colors, success-dark) !important; }
+    .btn-warning { background-color: map-get($colors, warning) !important; }
+    .btn-warning:active { background-color: map-get($colors, warning-dark) !important; }
+    .btn-danger { background-color: map-get($colors, danger) !important; }
+    .btn-danger:active { background-color: map-get($colors, danger-dark) !important; }
+    .btn-purple { background-color: map-get($colors, purple) !important; }
+    .btn-purple:active { background-color: map-get($colors, purple-dark) !important; }
+    
+    .btn-outline-primary { color: map-get($colors, primary) !important; border-color: map-get($colors, primary) !important; }
+    .btn-outline-success { color: map-get($colors, success) !important; border-color: map-get($colors, success) !important; }
+    .btn-outline-warning { color: map-get($colors, warning) !important; border-color: map-get($colors, warning) !important; }
+    .btn-outline-danger { color: map-get($colors, danger) !important; border-color: map-get($colors, danger) !important; }
+    .btn-outline-purple { color: map-get($colors, purple) !important; border-color: map-get($colors, purple) !important; }
+    
+    .card { background-color: map-get($colors, card-bg) !important; }
+    .card-bordered { border-color: map-get($colors, primary) !important; }
+    .card-footer { border-top-color: map-get($colors, primary) !important; }
+    
+    .badge-primary { background-color: map-get($colors, primary) !important; }
+    .badge-success { background-color: map-get($colors, success) !important; }
+    .badge-warning { background-color: map-get($colors, warning) !important; }
+    .badge-danger { background-color: map-get($colors, danger) !important; }
+    .badge-purple { background-color: map-get($colors, purple) !important; }
+    
+    .badge-outline-primary { color: map-get($colors, primary) !important; border-color: map-get($colors, primary) !important; }
+    .badge-outline-success { color: map-get($colors, success) !important; border-color: map-get($colors, success) !important; }
+    .badge-outline-warning { color: map-get($colors, warning) !important; border-color: map-get($colors, warning) !important; }
+    .badge-outline-danger { color: map-get($colors, danger) !important; border-color: map-get($colors, danger) !important; }
+    .badge-outline-purple { color: map-get($colors, purple) !important; border-color: map-get($colors, purple) !important; }
+    
+    .avatar-primary { background-color: map-get($colors, primary) !important; }
+    .avatar-success { background-color: map-get($colors, success) !important; }
+    .avatar-warning { background-color: map-get($colors, warning) !important; }
+    .avatar-danger { background-color: map-get($colors, danger) !important; }
+    .avatar-purple { background-color: map-get($colors, purple) !important; }
+    
+    .input:focus { border-color: map-get($colors, primary) !important; }
+    .input-primary { border-color: map-get($colors, primary) !important; }
+    .input-success { border-color: map-get($colors, success) !important; }
+    .input-warning { border-color: map-get($colors, warning) !important; }
+    .input-danger { border-color: map-get($colors, danger) !important; }
+    
+    .progress-bar { background-color: map-get($colors, primary) !important; }
+    .progress-success .progress-bar { background-color: map-get($colors, success) !important; }
+    .progress-warning .progress-bar { background-color: map-get($colors, warning) !important; }
+    .progress-danger .progress-bar { background-color: map-get($colors, danger) !important; }
+    .progress-purple .progress-bar { background-color: map-get($colors, purple) !important; }
+    
+    .loading-spinner { border-top-color: map-get($colors, primary) !important; }
+    .loading-primary .loading-spinner { border-top-color: map-get($colors, primary) !important; }
+    .loading-success .loading-spinner { border-top-color: map-get($colors, success) !important; }
+    .loading-warning .loading-spinner { border-top-color: map-get($colors, warning) !important; }
+    .loading-danger .loading-spinner { border-top-color: map-get($colors, danger) !important; }
+    .loading-purple .loading-spinner { border-top-color: map-get($colors, purple) !important; }
+    
+    .switch-active { background-color: map-get($colors, primary) !important; }
+    
+    .list-item { border-bottom-color: map-get($colors, primary) !important; }
+    .list-item-label { color: map-get($colors, text) !important; }
+    .list-item-value { color: map-get($colors, text) !important; }
+    
+    .divider { background-color: map-get($colors, primary) !important; }
+    .divider-dashed {
+      background: repeating-linear-gradient(
+        to right,
+        map-get($colors, primary) 0,
+        map-get($colors, primary) 8rpx,
+        transparent 8rpx,
+        transparent 16rpx
+      ) !important;
+    }
+    .divider-dotted {
+      background: repeating-linear-gradient(
+        to right,
+        map-get($colors, primary) 0,
+        map-get($colors, primary) 4rpx,
+        transparent 4rpx,
+        transparent 8rpx
+      ) !important;
+    }
+    .divider-text::before,
+    .divider-text::after {
+      background-color: map-get($colors, primary) !important;
+    }
+    .divider-text span {
+      color: map-get($colors, text) !important;
+    }
+    
+    .toast-success { background-color: map-get($colors, success) !important; }
+    .toast-warning { background-color: map-get($colors, warning) !important; }
+    .toast-danger { background-color: map-get($colors, danger) !important; }
+  }
+}
+
+/* ============================================
+   Dark mode + Holiday theme compatibility
+   ============================================ */
+@each $theme-name, $colors in $holiday-themes {
+  .page-dark.page-holiday-#{$theme-name},
+  .page-holiday-#{$theme-name}.page-dark {
+    background-color: #0f172a !important;
+    
+    .card {
+      background-color: #1e293b !important;
+    }
+    
+    .card-bordered {
+      border-color: map-get($colors, primary) !important;
+    }
+    
+    .card-footer {
+      border-top-color: #334155 !important;
+    }
+    
+    .tag {
+      background-color: #334155 !important;
+      color: #f1f5f9 !important;
+    }
+    
+    .tag-primary {
+      background-color: #1e1b4b !important;
+      color: map-get($colors, primary) !important;
+    }
+    
+    .tag-success {
+      background-color: #1e293b !important;
+      color: map-get($colors, success) !important;
+    }
+    
+    .tag-warning {
+      background-color: #334155 !important;
+      color: map-get($colors, warning) !important;
+    }
+    
+    .tag-danger {
+      background-color: #450a0a !important;
+      color: map-get($colors, danger) !important;
+    }
+    
+    .tag-purple {
+      background-color: #4a1942 !important;
+      color: map-get($colors, purple) !important;
+    }
+    
+    .avatar {
+      background-color: #334155 !important;
+      color: #94a3b8 !important;
+    }
+    
+    .avatar-primary {
+      background-color: map-get($colors, primary) !important;
+      color: #ffffff !important;
+    }
+    
+    .avatar-success {
+      background-color: map-get($colors, success) !important;
+      color: #ffffff !important;
+    }
+    
+    .avatar-warning {
+      background-color: map-get($colors, warning) !important;
+      color: #ffffff !important;
+    }
+    
+    .avatar-danger {
+      background-color: map-get($colors, danger) !important;
+      color: #ffffff !important;
+    }
+    
+    .avatar-purple {
+      background-color: map-get($colors, purple) !important;
+      color: #ffffff !important;
+    }
+    
+    .input {
+      background-color: #334155 !important;
+      color: #f1f5f9 !important;
+    }
+    
+    .input:focus {
+      background-color: #1e293b !important;
+    }
+    
+    .input-group {
+      background-color: #334155 !important;
+    }
+    
+    .list {
+      background-color: #1e293b !important;
+    }
+    
+    .list-item {
+      border-bottom-color: #334155 !important;
+    }
+    
+    .list-item-label {
+      color: #f1f5f9 !important;
+    }
+    
+    .list-item-value {
+      color: #94a3b8 !important;
+    }
+    
+    .divider {
+      background-color: #334155 !important;
+    }
+    .divider-dashed {
+      background: repeating-linear-gradient(
+        to right,
+        #334155 0,
+        #334155 8rpx,
+        transparent 8rpx,
+        transparent 16rpx
+      ) !important;
+    }
+    .divider-dotted {
+      background: repeating-linear-gradient(
+        to right,
+        #334155 0,
+        #334155 4rpx,
+        transparent 4rpx,
+        transparent 8rpx
+      ) !important;
+    }
+    .divider-text::before,
+    .divider-text::after {
+      background-color: #334155 !important;
+    }
+    .divider-text span {
+      color: #94a3b8 !important;
+    }
+    
+    .progress {
+      background-color: #334155 !important;
+    }
+    
+    .loading-spinner {
+      border-color: #334155 !important;
+    }
+    
+    .switch {
+      background-color: #334155 !important;
+    }
+    
+    .btn-ghost {
+      color: #f1f5f9 !important;
+    }
+    
+    .btn-ghost:active {
+      background-color: rgba(255, 255, 255, 0.05) !important;
+    }
+  }
+}

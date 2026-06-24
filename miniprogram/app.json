@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/index",
+    "pages/mine/index",
+    "pages/service/index",
+    "pages/shop/index"
+    
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "",
+    "selectedColor": "",
+    "borderStyle": "black",
+    "list": [{
+      "iconPath": "/icons/house.png",
+      "selectedIconPath": "/icons/house-active.png",
+      "text": "首页",
+      "pagePath": "pages/home/index"
+    }, {
+      "iconPath": "/icons/wrench.png",
+      "selectedIconPath": "/icons/wrench-active.png",
+      "text": "服务",
+      "pagePath": "pages/service/index"
+    }, {
+      "iconPath": "/icons/shopping.png",
+      "selectedIconPath": "/icons/shopping-active.png",
+      "text": "商城",
+      "pagePath": "pages/shop/index"
+    }, {
+      "iconPath": "/icons/user.png",
+      "selectedIconPath": "/icons/user-active.png",
+      "text": "我的",
+      "pagePath": "pages/mine/index"
+    }]
+  },
+  "style": "v2",
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "defaultContentBox": true,
+      "disableABTest": true,
+      "sdkVersionBegin": "3.0.0",
+      "sdkVersionEnd": "15.255.255"
+    }
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

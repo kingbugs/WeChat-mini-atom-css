@@ -1,0 +1,11 @@
+/**app.wxss**/
+
+/* 导入原子化样式系统 */
+@import './styles/index.scss';
+
+/* 全局容器样式 */
+.container {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+} 
